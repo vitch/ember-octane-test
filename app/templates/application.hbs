@@ -1,6 +1,9 @@
 <h1>Ember Octane test repo</h1>
 
-<ComponentA @data={{this.data}} />
+<ComponentA
+  @data={{this.data}}
+  @foo={{this.foo}}
+/>
 
 
 <button {{on "click" this.changeData}}>

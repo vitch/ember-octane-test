@@ -1,3 +1,4 @@
+<h2>Testing this.args vs @</h2>
 <div>
   <dl>
     <dt>@data</dt>
@@ -8,5 +9,20 @@
     <dd>
       <code>{{this.readOnlyArgsData}}</code>
     </dd>
+    <dt>@foo.bar.length</dt>
+    <dd>
+      <code>{{@foo.bar.length}}</code>
+    </dd>
+    <dt>@readOnly('args.foo.bar.length')</dt>
+    <dd>
+      <code>{{this.numBars}}</code>
+    </dd>
   </dl>
 </div>
+
+<h3>Previous values of @data</h3>
+<ul>
+  {{#each @foo.bar as |i|}}
+    <li>{{i}}</li>
+  {{/each}}
+</ul>

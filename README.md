@@ -23,6 +23,8 @@ By using the latest `@glimmer/component` (with [this fix](https://github.com/gli
 *But* it regressed somewhere in [this range](https://github.com/emberjs/ember.js/compare/755ea5dbe65d91e0d650707da740aa6900d0a755...eb5226a230b7066608e3cd1c0045917453ec9572)
 of commits to `ember-source`.
 
+Note that it's still not working well with a nested property (`@readOnly('args.foo.bar.length')` :( )
+
 See the commits to see the bug manifesting and being fixed at different points.
 
 ------

@@ -3,11 +3,11 @@ import { readOnly } from '@ember/object/computed';
 
 export default class ComponentAComponent extends Component {
   @readOnly('args.data')
-  readOnlyArgsData
+  readOnlyArgsData;
 
   @readOnly('args.foo.bar.length')
-  numBars
+  numBars;
 
   @readOnly('args.foo.fizz')
-  fooFizz
+  fooFizz;
 }

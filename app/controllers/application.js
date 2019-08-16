@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import EmberObject from '@ember/object';
-import { action, set } from '@ember/object';
+import { action, computed, set } from '@ember/object';
 
 class Foo extends EmberObject {
   /**
@@ -20,7 +20,7 @@ class Foo extends EmberObject {
   fizz = 'buzz';
 
   /**
-   * It's not imporant that we have this but it does long an interesting message - it looks like the computed
+   * It's not imporant that we have this but it does log an interesting message - it looks like the computed
    * property key tries to get `foo.length` rather than `foo.bar.length`
    */
   unknownProperty(key) {
@@ -28,14 +28,40 @@ class Foo extends EmberObject {
   }
 }
 
+class Foo2 extends EmberObject {
+  @computed
+  get bar() {
+    return [];
+  };
+
+  @computed
+  get fizz() {
+    return 'buzz';
+  }
+
+}
+
 export default class ApplicationController extends Controller {
   data = 0;
   foo = Foo.create();
+  foo2 = Foo2.create();
+
+  @computed
+  get foo3() {
+    return Foo2.create();
+  }
 
   @action
   changeData() {
     set(this.foo, 'fizz', `${this.foo.fizz} fizz`);
     this.foo.bar.addObject(this.data);
+
+    set(this.foo2, 'fizz', `${this.foo2.fizz} fizz`);
+    this.foo2.bar.addObject(this.data);
+
+    set(this.foo3, 'fizz', `${this.foo3.fizz} fizz`);
+    this.foo3.bar.addObject(this.data);
+
     set(this, 'data', Math.random());
   }
 }

@@ -1,4 +1,5 @@
 import Component from '@glimmer/component';
+import { get } from '@ember/object';
 
 export default class ComponentBComponent extends Component {
   get data() {
@@ -6,10 +7,10 @@ export default class ComponentBComponent extends Component {
   }
 
   get numBars() {
-    return this.args.foo.bar.length;
+    return get(this.args, 'foo.bar.length');
   }
 
   get fooFizz() {
-    return this.args.foo.fizz;
+    return get(this.args, 'foo.fizz');
   }
 }

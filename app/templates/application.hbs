@@ -4,15 +4,56 @@
   Update data
 </button>
 
+<p>
+  Illustrating issues when nested properties update in objects that can't use <code>@tracked</code>.
+</p>
+
 <div style="display: flex;">
   <div style="margin-right: 2em;">
     <ComponentA
+      @label="ComponentA foo"
+      @data={{this.data}}
+      @foo={{this.foo}}
+    />
+  </div>
+  <div style="margin-right: 2em;">
+    <ComponentA
+      @label="ComponentA foo2"
+      @data={{this.data}}
+      @foo={{this.foo2}}
+    />
+  </div>
+  <div style="margin-right: 2em;">
+    <ComponentA
+      @label="ComponentA foo3"
+      @data={{this.data}}
+      @foo={{this.foo3}}
+    />
+  </div>
+  <div>
+    <ComponentB
+      @label="ComponentB foo"
       @data={{this.data}}
       @foo={{this.foo}}
     />
   </div>
   <div>
     <ComponentB
+      @label="ComponentB foo2"
+      @data={{this.data}}
+      @foo={{this.foo2}}
+    />
+  </div>
+  <div>
+    <ComponentB
+      @label="ComponentB foo3"
+      @data={{this.data}}
+      @foo={{this.foo3}}
+    />
+  </div>
+  <div>
+    <ComponentC
+      @label="ComponentC foo"
       @data={{this.data}}
       @foo={{this.foo}}
     />

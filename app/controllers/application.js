@@ -1,4 +1,5 @@
 import Controller from '@ember/controller';
+import Ember from 'ember';
 import EmberObject from '@ember/object';
 import { action, computed, set } from '@ember/object';
 
@@ -45,6 +46,8 @@ export default class ApplicationController extends Controller {
   data = 0;
   foo = Foo.create();
   foo2 = Foo2.create();
+
+  libraries = Ember.libraries._registry;
 
   @computed
   get foo3() {

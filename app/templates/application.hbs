@@ -1,5 +1,11 @@
 <h1>Ember Octane test repo</h1>
 
+<ul>
+  {{#each this.libraries as |library|}}
+    <li>{{library.name}} [{{library.version}}]</li>
+  {{/each}}
+</ul>
+
 <button {{on "click" this.changeData}}>
   Update data
 </button>

@@ -1,12 +1,11 @@
 # ember-octane-test
 
-This repo contains an example which shows an issue with Ember Octane whereby properties on 
-nested objects don't update in the template when they are updated on the source object.
+This repo contained some examples of things which were broken in Ember Octane.
 
-The workaround is visible with ComponentC
+However, the following PRs have fixed the bugs!
 
-(note you need the correct and compatible versions of `ember-source` and `@glimmer/component`
-for this to work at all)
+ * [glimmer.js#201](https://github.com/glimmerjs/glimmer.js/pull/201)]
+ * [ember.js#18274](https://github.com/emberjs/ember.js/pull/18274)
 
 ------
 

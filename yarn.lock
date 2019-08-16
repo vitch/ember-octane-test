@@ -816,7 +816,7 @@
     "@glimmer/util" "^0.41.4"
     "@glimmer/wire-format" "^0.41.4"
 
-"@glimmer/component@^0.14.0-alpha.9":
+"@glimmer/component@^0.14.0-alpha.11":
   version "0.14.0-alpha.11"
   resolved "https://registry.yarnpkg.com/@glimmer/component/-/component-0.14.0-alpha.11.tgz#e3a04f6d91bf55d080241bef990843f1daf9f1bc"
   integrity sha512-UTQD2QfY6X2KX5+serzdapS6LMw8og8wFBUa5ZgiLIsiXhX2FuXkUuoTBXzRLwvHFiBqwW6MEYa6vU0qgJWEzw==

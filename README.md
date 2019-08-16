@@ -23,9 +23,15 @@ By using the latest `@glimmer/component` (with [this fix](https://github.com/gli
 *But* it regressed somewhere in [this range](https://github.com/emberjs/ember.js/compare/755ea5dbe65d91e0d650707da740aa6900d0a755...eb5226a230b7066608e3cd1c0045917453ec9572)
 of commits to `ember-source`.
 
+See the commits to see the bug manifesting and being fixed at different points.
+
+## Additional bug
+
 Note that it's still not working well with a nested property (`@readOnly('args.foo.bar.length')` :( )
 
-See the commits to see the bug manifesting and being fixed at different points.
+The changes in this commit might hint at why. As you can see, we add a log on `unknownProperty` and it seems that `foo.length`
+is being got by the computed property (rather than `foo.bar.length`). This might explain why the conputed property doesn't then
+update...
 
 ------
 

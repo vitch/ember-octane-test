@@ -1,7 +1,10 @@
 # ember-octane-test
 
-This repo contains an example which shows an issue with Ember Octane. Updating a value that is passed as an argument 
-to a glimmer component results in an error:
+This repo contains an example which shows two issues with Ember Octane. 
+
+1) Properties on nested objects don't update in the template when they are updated
+2) Updating a value that is passed as an argument to a glimmer component results in an error except with exactly the right versions 
+   of `@glimmer/component` and `ember-source`:
 
 ```
 component-manager.js:41 Uncaught (in promise) TypeError: 'ownKeys' on proxy: trap returned extra keys but proxy target is non-extensible
@@ -17,21 +20,9 @@ component-manager.js:41 Uncaught (in promise) TypeError: 'ownKeys' on proxy: tra
     at InteractiveRenderer._renderRoots (index.js:5499)
 ```
 
-By using the latest `@glimmer/component` (with [this fix](https://github.com/glimmerjs/glimmer.js/pull/201)) *and* certain releases of
-`ember-source` it works OK. 
 
-*But* it regressed somewhere in [this range](https://github.com/emberjs/ember.js/compare/755ea5dbe65d91e0d650707da740aa6900d0a755...eb5226a230b7066608e3cd1c0045917453ec9572)
-of commits to `ember-source`.
-
-See the commits to see the bug manifesting and being fixed at different points.
-
-## Additional bug
-
-Note that it's still not working well with a nested property (`@readOnly('args.foo.bar.length')` :( )
-
-The changes in this commit might hint at why. As you can see, we add a log on `unknownProperty` and it seems that `foo.length`
-is being got by the computed property (rather than `foo.bar.length`). This might explain why the conputed property doesn't then
-update...
+The regression in `ember source happened in [this range](https://github.com/emberjs/ember.js/compare/755ea5dbe65d91e0d650707da740aa6900d0a755...eb5226a230b7066608e3cd1c0045917453ec9572)
+of commits (as you can see if you look through the commit history on this repo).
 
 ------
 

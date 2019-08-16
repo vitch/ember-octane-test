@@ -1,0 +1,36 @@
+<h2>Testing this.args vs @</h2>
+<div>
+  <dl>
+    <dt>@data</dt>
+    <dd>
+      <code>{{@data}}</code>
+    </dd>
+    <dt>via getter</dt>
+    <dd>
+      <code>{{this.data}}</code>
+    </dd>
+    <dt>@foo.bar.length</dt>
+    <dd>
+      <code>{{@foo.bar.length}}</code>
+    </dd>
+    <dt>via getter</dt>
+    <dd>
+      <code>{{this.numBars}}</code>
+    </dd>
+    <dt>@foo.fizz</dt>
+    <dd>
+      <code>{{@foo.fizz}}</code>
+    </dd>
+    <dt>via getter</dt>
+    <dd>
+      <code>{{this.fooFizz}}</code>
+    </dd>
+  </dl>
+</div>
+
+<h3>Previous values of @data</h3>
+<ul>
+  {{#each @foo.bar as |i|}}
+    <li>{{i}}</li>
+  {{/each}}
+</ul>

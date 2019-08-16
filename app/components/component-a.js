@@ -8,6 +8,6 @@ export default class ComponentAComponent extends Component {
   @readOnly('args.foo.bar.length')
   numBars;
 
-  @readOnly('args.foo.fizz')
-  fooFizz;
+  @readOnly('args.foo.fizz.buzz')
+  fooFizzBuzz;
 }

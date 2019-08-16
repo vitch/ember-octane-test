@@ -18,7 +18,9 @@ class Foo extends EmberObject {
    * apps which are using Octane and apps which will still be using Ember 3.8 so we can't introduce Octane
    * specific code into the `Foo` class.
    */
-  fizz = 'buzz';
+  fizz = {
+    buzz: 'buzz',
+  };
 
   /**
    * It's not imporant that we have this but it does log an interesting message - it looks like the computed
@@ -37,7 +39,9 @@ class Foo2 extends EmberObject {
 
   @computed
   get fizz() {
-    return 'buzz';
+    return {
+      buzz: 'buzz',
+    }
   }
 
 }
@@ -56,13 +60,13 @@ export default class ApplicationController extends Controller {
 
   @action
   changeData() {
-    set(this.foo, 'fizz', `${this.foo.fizz} fizz`);
+    set(this.foo.fizz, 'buzz', `${this.foo.fizz.buzz} fizz`);
     this.foo.bar.addObject(this.data);
 
-    set(this.foo2, 'fizz', `${this.foo2.fizz} fizz`);
+    set(this.foo2.fizz, 'buzz', `${this.foo2.fizz.buzz} fizz`);
     this.foo2.bar.addObject(this.data);
 
-    set(this.foo3, 'fizz', `${this.foo3.fizz} fizz`);
+    set(this.foo3.fizz, 'buzz', `${this.foo3.fizz.buzz} fizz`);
     this.foo3.bar.addObject(this.data);
 
     set(this, 'data', Math.random());

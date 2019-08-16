@@ -10,7 +10,7 @@ export default class ComponentBComponent extends Component {
     return get(this.args, 'foo.bar.length');
   }
 
-  get fooFizz() {
-    return get(this.args, 'foo.fizz');
+  get fooFizzBuzz() {
+    return get(this.args, 'foo.fizz.buzz');
   }
 }

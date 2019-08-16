@@ -5,7 +5,7 @@
     <dd>
       <code>{{@data}}</code>
     </dd>
-    <dt>@readOnly(args.data)</dt>
+    <dt>this.readOnlyArgsData</dt>
     <dd>
       <code>{{this.readOnlyArgsData}}</code>
     </dd>
@@ -13,17 +13,17 @@
     <dd>
       <code>{{@foo.bar.length}}</code>
     </dd>
-    <dt>@readOnly('args.foo.bar.length')</dt>
+    <dt>this.numBars</dt>
     <dd>
       <code>{{this.numBars}}</code>
     </dd>
-    <dt>@foo.fizz</dt>
+    <dt>@foo.fizz.buzz</dt>
     <dd>
-      <code>{{@foo.fizz}}</code>
+      <code>{{@foo.fizz.buzz}}</code>
     </dd>
-    <dt>via getter</dt>
+    <dt>this.fooFizzBuzz</dt>
     <dd>
-      <code>{{this.fooFizz}}</code>
+      <code>{{this.fooFizzBuzz}}</code>
     </dd>
   </dl>
 </div>

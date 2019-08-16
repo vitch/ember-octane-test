@@ -9,7 +9,7 @@ export default class ComponentBComponent extends Component {
     return this.args.foo.bar.length;
   }
 
-  get fooFizz() {
-    return this.args.foo.fizz;
+  get fooFizzBuzz() {
+    return this.args.foo.fizz.buzz;
   }
 }
